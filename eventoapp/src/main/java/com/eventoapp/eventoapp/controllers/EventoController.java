@@ -1,11 +1,11 @@
 package com.eventoapp.eventoapp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 //	- @org.springframework.beans.factory.annotation.Autowired(required=true)
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.eventoapp.eventoapp.controllers.repository.EventoRepository;
 import com.eventoapp.eventoapp.models.Evento;
@@ -29,5 +29,17 @@ public class EventoController {
 		//Persistindo evento no banco de dados
 		er.save(evento); //Salva evento no banco de dados
 		return "redirect:/cadastrarEvento";
+	}
+	
+	//Retorna lista de eventos
+	@RequestMapping("/eventos")
+	public ModelAndView listaEventos(){
+		//mostra a página que ele vai redenrizar os dados do evento
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Evento> eventos = er.findAll(); //Tráz do banco todos os eventos cadastrados
+		//Passa lista de eventos para a view
+		mv.addObject("eventos", eventos);
+		
+		return mv;
 	}
 }
