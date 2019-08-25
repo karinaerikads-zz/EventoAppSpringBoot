@@ -3,6 +3,7 @@ package com.eventoapp.eventoapp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 //	- @org.springframework.beans.factory.annotation.Autowired(required=true)
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,5 +42,15 @@ public class EventoController {
 		mv.addObject("eventos", eventos);
 		
 		return mv;
+	}
+	
+	//Mostra os detalhes de um evento específico
+	@RequestMapping("/{codigo}")
+	public ModelAndView detalhesEvento (@PathVariable("codigo") long codigo){
+		Evento evento = er.findByCodigo(codigo);
+		ModelAndView mv = new ModelAndView("evento/detalhesEVento");
+		mv.addObject("evento", evento);
+		return mv;
+
 	}
 }
