@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.eventoapp.eventoapp.controllers.repository.ConvidadoRepository;
 import com.eventoapp.eventoapp.controllers.repository.EventoRepository;
+import com.eventoapp.eventoapp.models.Convidado;
 import com.eventoapp.eventoapp.models.Evento;
 
 @Controller
@@ -17,6 +19,9 @@ public class EventoController {
 	//Criar uma injeção de independência, ou seja, sempre que precisar usar a interface, então será criado uma nova instância
 	@Autowired 	
 	private EventoRepository er;
+	
+	@Autowired 	
+	private ConvidadoRepository cr;
 	
 	//Requisição para retornar o formulário
 	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.GET)
@@ -45,12 +50,22 @@ public class EventoController {
 	}
 	
 	//Mostra os detalhes de um evento específico
-	@RequestMapping("/{codigo}")
+	@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
 	public ModelAndView detalhesEvento (@PathVariable("codigo") long codigo){
 		Evento evento = er.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("evento/detalhesEVento");
 		mv.addObject("evento", evento);
 		return mv;
+
+	}
+	
+	//Salva convidado
+	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)
+	public String detalhesEventoPost (@PathVariable("codigo") long codigo, Convidado convidado){
+		Evento evento = er.findByCodigo(codigo);
+		convidado.setEvento(evento);
+		cr.save(convidado);
+		return "redirect:/{codigo}";
 
 	}
 }
