@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Evento implements Serializable {
@@ -17,10 +18,13 @@ public class Evento implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
-	
+	@NotEmpty //Não permite que o campo fique vazio
 	private String nome;
+	@NotEmpty //Não permite que o campo fique vazio
 	private String local;
+	@NotEmpty //Não permite que o campo fique vazio
 	private String data;
+	@NotEmpty //Não permite que o campo fique vazio
 	private String horario;
 	
 	//Um evento para muitos convidados

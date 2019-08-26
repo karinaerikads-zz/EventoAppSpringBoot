@@ -1,5 +1,13 @@
 package com.eventoapp.eventoapp.controllers;
 
+import javax.naming.Binding;
+import javax.validation.Valid;
+
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 //	- @org.springframework.beans.factory.annotation.Autowired(required=true)
 import org.springframework.stereotype.Controller;
@@ -7,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.eventoapp.eventoapp.controllers.repository.ConvidadoRepository;
 import com.eventoapp.eventoapp.controllers.repository.EventoRepository;
@@ -24,16 +33,21 @@ public class EventoController {
 	private ConvidadoRepository cr;
 	
 	//Requisição para retornar o formulário
-	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.GET)
+	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.GET) //Get pois irá retornar o formulário
 	public String form(){
 		return "evento/formEvento";
 	}
 	
-	//Requisição para salvar os dados no banco de dados
-	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.POST) //Get pois irá retornar o formulário
-	public String form(Evento evento){
+	//Requisição para salvar os dados do evento no banco de dados
+	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.POST) 
+	public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+			return "redirect:/cadastrarEvento";
+		}
 		//Persistindo evento no banco de dados
 		er.save(evento); //Salva evento no banco de dados
+		attributes.addFlashAttribute("mensagem", "Evento cadastrado com sucesso!");
 		return "redirect:/cadastrarEvento";
 	}
 	
@@ -65,10 +79,16 @@ public class EventoController {
 	
 	//Salva convidado
 	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)
-	public String detalhesEventoPost (@PathVariable("codigo") long codigo, Convidado convidado){
+	public String detalhesEventoPost (@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+			return "redirect:/{codigo}";
+		}
+		
 		Evento evento = er.findByCodigo(codigo);
 		convidado.setEvento(evento);
 		cr.save(convidado);
+		attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
 		return "redirect:/{codigo}";
 
 	}

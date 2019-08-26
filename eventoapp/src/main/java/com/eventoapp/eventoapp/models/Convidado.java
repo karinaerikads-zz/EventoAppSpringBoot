@@ -4,11 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import javax.validation.constraints.NotEmpty;
+
 @Entity
 public class Convidado {
 	
-	@Id
+	@Id //É a chave primária
+	@NotEmpty //Não permite que o campo fique vazio
 	private String rg;
+	@NotEmpty //Não permite que o campo fique vazio
 	private String nomeConvidado;	
 	
 	@ManyToOne //Muitos convidados para um evento
