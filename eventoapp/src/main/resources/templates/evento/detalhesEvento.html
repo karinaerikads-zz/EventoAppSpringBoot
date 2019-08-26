@@ -29,11 +29,22 @@
 	 		Nome:<input type="text" value="" name="nomeConvidado">
 	 		RG:<input type="text" value="" name="rg">
 	 		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-	 </form>
-	 	
+	 	</form>
 	 </div>
 	 
-	 
+	 <!-- Mostra lista de convidados para um evento específico -->
+	 <h5>Lista de convidados:</h5>
+	 <div class="container" th:each="convidado:${convidados}">
+	 	<div class="row">
+	 		<div class="input-field col s6">
+	 			<p><span th:text="${convidado.nomeConvidado}"></span></p>
+	 		</div>
+	 		<div class="input-field col s3">
+	 			<p><span th:text="${convidado.rg}"></span></p>
+	 		</div>
+	 	</div>
+	 	
+	 </div>
 	
 	
 	<!--JavaScript at end of body for optimized loading-->
