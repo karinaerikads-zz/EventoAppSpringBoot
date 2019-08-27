@@ -11,12 +11,25 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link rel="stylesheet" href="style/styleCss.css">
+    
 	
 </head>
 <body>
-	<h1>Lista de eventos</h1> 
+
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Lista de Eventos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
+		      </ul>
+		    </div>
+	  	</nav>    
+	</header>
 	
-	<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
+	<!-- <h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3> -->
 	 
 	 <table class="container striped">
 		 <thead>
@@ -25,6 +38,7 @@
 		 		<th>Local</th>
 		 		<th>Data</th>
 		 		<th>Horário</th>
+		 		<th>Deletar</th>
 		 	</tr>
 		 </thead>
 		 
@@ -34,6 +48,7 @@
 				<td><span th:text="${evento.local}"></span></td>
 				<td><span th:text="${evento.data}"></span></td>
 				<td><span th:text="${evento.horario}"></span></td>
+				<td><a class="waves-effect waves-light small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons left">delete</i></a></td>
 			</tr>
 		 </tbody>
 	 
