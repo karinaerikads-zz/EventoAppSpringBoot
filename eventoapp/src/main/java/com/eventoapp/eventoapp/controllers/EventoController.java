@@ -38,6 +38,12 @@ public class EventoController {
 		return "evento/formEvento";
 	}
 	
+	//Requisição para novo index
+		@RequestMapping(value="/novoIndex", method = RequestMethod.GET) //Get pois irá retornar o formulário
+		public String index(){
+			return "/index2";
+		}
+	
 	//Requisição para salvar os dados do evento no banco de dados
 	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.POST) 
 	public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
@@ -56,7 +62,7 @@ public class EventoController {
 	public ModelAndView listaEventos(){
 		//mostra a página que ele vai redenrizar os dados do evento
 		ModelAndView mv = new ModelAndView("index");
-		Iterable<Evento> eventos = er.findAll(); //Tráz do banco todos os eventos cadastrados
+		Iterable<Evento> eventos = er.findAll(); //Trás do banco todos os eventos cadastrados
 		//Passa lista de eventos para a view
 		mv.addObject("eventos", eventos);
 		

@@ -17,7 +17,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 public class DataConfiguration {
 	
-	/*Para usar o mysql, deve-se utilizar esses dois métodos que estão comentados
+	//Para usar o mysql, deve-se utilizar esses dois métodos que estão comentados
 	@Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -26,20 +26,21 @@ public class DataConfiguration {
         dataSource.setUsername("root");
         dataSource.setPassword("1234");
         return dataSource;
-    }*/
+    }
 	
-	//@Bean
-	//public JpaVendorAdapter jpaVendorAdapter(){
-		//HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-		//adapter.setDatabase(org.springframework.orm.jpa.vendor.Database.MYSQL);
-		//adapter.setShowSql(true); //Mostra no console a execução de um select, delete etc
-		//adapter.setGenerateDdl(true); //Permite que o hibernate crie as tabelas automaticamente
-		//adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
-		//adapter.setPrepareConnection(true); //true para preparar a conexão automaticamente
-		//return adapter;
-	//}
+	
+	@Bean
+	public JpaVendorAdapter jpaVendorAdapter(){
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+		adapter.setDatabase(org.springframework.orm.jpa.vendor.Database.MYSQL);
+		adapter.setShowSql(true); //Mostra no console a execução de um select, delete etc
+		adapter.setGenerateDdl(true); //Permite que o hibernate crie as tabelas automaticamente
+		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
+		adapter.setPrepareConnection(true); //true para preparar a conexão automaticamente
+		return adapter;
+	}
 
-	
+	/*
 	@Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -55,6 +56,5 @@ public class DataConfiguration {
 
         return basicDataSource;
 	
-
-}
+	}*/
 }
