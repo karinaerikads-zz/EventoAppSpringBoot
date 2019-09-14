@@ -648,7 +648,7 @@
 }
 
 .blue-text {
-  color: #2196F3 !important;
+  color: #0097ff !important;
 }
 
 .blue.lighten-5 {
@@ -980,7 +980,7 @@
 }
 
 .teal {
-  background-color: #009688 !important;
+  background-color: #0097ff !important;
 }
 
 .teal-text {
@@ -4873,7 +4873,7 @@ small {
 }
 
 .card .card-image .card-title {
-  color: #fff;
+  color: #0097ff;
   position: absolute;
   bottom: 0;
   left: 0;

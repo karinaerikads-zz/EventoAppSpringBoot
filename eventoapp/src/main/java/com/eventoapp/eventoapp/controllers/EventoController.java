@@ -61,7 +61,7 @@ public class EventoController {
 	@RequestMapping("/eventos")
 	public ModelAndView listaEventos(){
 		//mostra a página que ele vai redenrizar os dados do evento
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView mv = new ModelAndView("listaEventos");
 		Iterable<Evento> eventos = er.findAll(); //Trás do banco todos os eventos cadastrados
 		//Passa lista de eventos para a view
 		mv.addObject("eventos", eventos);

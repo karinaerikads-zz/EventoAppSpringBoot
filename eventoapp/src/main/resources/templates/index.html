@@ -4,80 +4,187 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Parallax Template - Materialize</title>
+  
+  <meta name="keywords" content="footer, address, phone, icons" />
+  
+  <title>Eventos</title>
   
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="materialize/css/styleCss.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   
+  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   
-  
-  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
 
+  <link rel="stylesheet" href="style/styleCss.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="shortcut icon" href="imagens/eventos-favicon.png" />
     
-    <link rel="stylesheet" href="style/styleCss.css">
 </head>
 <body>
+
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper container">    	
+      <!-- fonte da logo Trebuchet ms -->
+      <a id="logo-container" href="#" class="brand-logo"><img src="imagens/eventos-logo.png" alt="Unsplashed background img 1" style="width:40%"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/cadastrarEvento">Cadastrar Evento</a></li>
+        <li><a href="/eventos">Ver Eventos</a></li>  
       </ul>
+      
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
+       	<li><a href="/cadastrarEvento">Cadastrar Evento</a></li>
+       	<li><a href="/eventos">Ver Eventos</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   
-  <!-- 
-  <h1>TESTE</h1>
-  
-  <table>
-		 <thead>
-		 	<tr>
-		 		<th>Nome</th>
-		 		<th>Local</th>
-		 		<th>Data</th>
-		 		<th>Horário</th>
-		 		<th>Deletar</th>
-		 	</tr>
-		 </thead>
-		 
-		 <tbody>
-		 	<tr th:each="evento: ${eventos}">
-		 		<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
-				<td><span th:text="${evento.local}"></span></td>
-				<td><span th:text="${evento.data}"></span></td>
-				<td><span th:text="${evento.horario}"></span></td>
-				<td><a class="waves-effect waves-light small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons left">delete</i></a></td>
-			</tr>
-		 </tbody>
-	 
-	</table>
-	<h1>TESTE</h1>
-	 -->
-
+ 
   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
+    <div class="no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">EventosApp</h1>
+        <!-- <h1 class="header center teal-text text-lighten-2">EventosApp</h1> -->
         <div class="row center">
-          <h5 class="header col s12 textTitulo">Gerencie seus eventos com o nosso sistema</h5>
+          <h5 class="header col s12 textTitulo">Ainda não <b>vende ingressos</b> ou <b>gerencia seus eventos</b> com o nosso sistema?</h5>
         </div>
-        <div class="row center">
-          <a href="eventos" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Ver eventos</a>
+        
+	    <!-- Card -->
+	          <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+          
+          <a href="/cadastrarEvento">  
+			      <div class="cardContainer">
+			        <div class="additional">
+			          <div class="user-cardContainer center">
+			          	<div class="moldura">
+			            	<img src="imagens/cadastrar_evento.png" width="110" height="110">
+			            </div>
+			          </div>     
+			        </div>
+			        <div class="general">
+			          <h5 style="text-align: justify"><b>Publique seu evento</b></h5>
+			          <p>Cadastre seu evento <b>gratuitamente</b> e faça parte da plataforma que <b>gerencia com eficiência</b> seus eventos.</p>
+			        </div>
+			      </div>
+			    </a>
+          
+          </div>
         </div>
-        <br><br>
+
+        <div class="col s12 m6">
+          <div class="icon-block">
+           <a href="/cadastrarEvento">  
+			      <div class="cardContainer">
+			        <div class="additional">
+			          <div class="user-cardContainer center">
+			          	<div class="moldura">
+			            	<img src="imagens/cadastrar_evento.png" width="110" height="110">
+			            </div>
+			          </div>     
+			        </div>
+			        <div class="general">
+			          <h5 style="text-align: justify"><b>Publique seu evento</b></h5>
+			          <p>Cadastre seu evento <b>gratuitamente</b> e faça parte da plataforma que <b>gerencia com eficiência</b> seus eventos.</p>
+			        </div>
+			      </div>
+			    </a>
+          </div>
+        </div>
 
       </div>
+        <!-- Fim card -->
+        
+        <br><br>
+      </div>
     </div>
-    <div class="parallax"><img src="imagens/luzes_evento.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax background"></div>
+  </div>
+  
+    <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <!-- <h3><i class="mdi-content-send brown-text"></i></h3> -->
+          <h5 style="text-align: justify">Categorias dos eventos cadastrados: </h5>
+          <br><br>
+          
+          <div class="col s12 m2">
+	          <div class="user-cardContainer center">
+			  	<div class="molduraCategorias">
+					<img src="imagens/categorias/aniversario.png" width="70" height="70">					
+			    </div>
+			    <p>Aniversário</p>
+          	  </div>
+          </div>
+        
+          <div class="col s12 m2">
+	          <div class="user-cardContainer center">
+			  	<div class="molduraCategorias">
+					<img src="imagens/categorias/musical.png" width="70" height="70">					
+			    </div>
+			    <p>Musical</p>
+          	  </div>
+          </div>
+          
+          <div class="col s12 m2">
+	          <div class="user-cardContainer center">
+			  	<div class="molduraCategorias">
+					<img src="imagens/categorias/karaoke.png" width="70" height="70">					
+			    </div>
+			    <p>Karaokê</p>
+          	  </div>
+          </div>
+          
+          <div class="col s12 m2">
+	          <div class="user-cardContainer center">
+			  	<div class="molduraCategorias">
+					<img src="imagens/categorias/gastronomico.png" width="70" height="70">					
+			    </div>
+			    <p>Gastronômico</p>
+          	  </div>
+          </div>
+          
+          
+          
+        
+         <div class="col s12 m2">
+	          <div class="user-cardContainer center">
+			  	<div class="molduraCategorias">
+					<img src="imagens/categorias/cultural.png" width="70" height="70">					
+			    </div>
+			    <p>Cultural</p>
+          	  </div>
+          </div>
+          
+          
+          <div class="col s12 m2">
+	          <div class="user-cardContainer"> 
+		      	<div class="molduraCategorias">
+		        	<img src="imagens/categorias/outros.png" width="70" height="70">					
+		        </div>
+			    <p>Outros</p>
+          	  </div>
+          </div>
+          
+         
+        
+      </div>
+      
+      
+
+    </div>
+  </div>
   </div>
 
 
@@ -88,105 +195,76 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h2 class="center blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Publique seu evento</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Cadastre todos os dados do seu evento em nossa plataforma, nós ajudamos a gerenciar seus eventos de forma eficiente.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Mande convites</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Depois de cadastrar seu evento em nossa plataforma, mande convite para as pessoas que você quer que estejam em seu evento.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h2 class="center blue-text"><i class="material-icons">date_range</i></h2>
+            <h5 class="center">Participe dos eventos</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Escolha entre a lista de eventos da plataforma e participe do que mais combina com você! A inscrição é muito fácil.</p>
           </div>
         </div>
       </div>
 
     </div>
   </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="imagens/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="imagens/background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
+  
 
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+        <div class="col l5 s12">
+          <h5 class="white-text">A plataforma</h5>
+          <p class="grey-text text-lighten-4">Esse sistema busca gerenciar eventos com eficiência. Cadastre seu evento e
+          convide pessoas ou busque o evento que mais combina com você em nossa plataforma, são diversas categorias.</p>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+        
+        
+        <div class="col l4 s12">
+          <h5 class="white-text">Contato</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+          	<li><i class="material-icons left">location_on</i> <p>São Luís, Maranhão</p></li>
+          	<li><i class="material-icons left">local_phone</i> <p>+55 (98) 98861-4031</p></li>
+          	<li><i class="material-icons left">email</i> <p>karinaerikads@hotmail.com</p></li>
           </ul>
         </div>
+        
+        
+        
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+          <h5 class="white-text">Sobre</h5>
+          <p>Projeto criado para o portifólio2 da desenvolvedora Karina dos Santos. Layout inspirado no <a class="linkfooter" href="https://www.sympla.com.br/">Sympla</a>. Conheça a profissional:
+          </p>
+          
+          <ul align="center">
+            <li><a href="https://www.linkedin.com/in/karinaerikads" class="linkfooter">Linkedin</a>
+            ·
+            <a href="https://github.com/karinaerikads" class="linkfooter">Github</a></li>
+            
           </ul>
+          	
+			
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Feito por <a class="brown-text text-lighten-3" href="https://github.com/karinaerikads">Karina dos Santos</a>
       </div>
     </div>
   </footer>
@@ -198,8 +276,7 @@
   <script src="materialize/js/init.js"></script>
   
   <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	
-
   </body>
 </html>

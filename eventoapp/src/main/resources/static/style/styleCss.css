@@ -1,3 +1,4 @@
+
 .detalhesEvento{
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 26px;
@@ -18,9 +19,150 @@
 }
 
 .textTitulo{
-	color: #000000;
+	color: #ffffff;
+	font-size:45px;
+	margin-top: 40px;
 }
 
+.background{
+	background-color:#0097ff;
+}
+
+/*Estilo do card do container*/
+.centerCard {
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);*/
+}
+
+.cardContainer {
+  width: 450px;
+  height: 200px;
+  background-color: #0097ff; 
+  /*background: linear-gradient(#f8f8f8, #0097ff);*/
+  /*box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);*/
+  border-radius: 6px;
+  overflow: visible;/*hidden;*/
+  position: relative;
+  margin: 1.5rem;
+  font-family: arial;
+}
+
+.cardContainer h5 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.cardContainer p{
+	color: #ffffff;
+}
+
+.cardContainer img{
+	width: 110;
+	height: 110;
+	border-radius: 50%;
+}
+
+.moldura {
+	border:2px solid #ffffff;
+	padding:17px;
+	border-radius: 50%;
+	
+}
+
+.molduraCategorias {
+	/*
+	border:2px solid #149fff;
+	padding:10px 10px 10px 10px;
+	border-radius: 50%;
+	width:100%;*/
+	
+}
+
+
+.cardContainer .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  /*background: linear-gradient(#dE685E, #26a7ff);*/
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.cardContainer:hover  {
+  /*background-color: rgba(0,151,255,0.5);*/
+  background-color: #53a9e2;
+  /*width: 100%;*/
+  /*border-radius: 0 5px 5px 0;*/
+}
+
+.cardContainer .additional .user-cardContainer {
+  width: 150px;
+ 
+  /*
+  height: 50%;
+  position: relative;/*
+  float: left;
+  
+}
+
+.cardContainer .additional .user-cardContainer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);*/
+}
+
+.cardContainer .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.cardContainer .additional .more-info h1 {
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.cardContainer.green .additional .more-info h1 {
+  color: #ffffff;
+}
+
+	
+.cardContainer .additional .coords span + span {
+  float: right;
+}
+
+
+.cardContainer .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.cardContainer .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+
+
+/*Fim estilo do card do container*/
 
 /* Custom Stylesheet */
 /**
@@ -29,6 +171,26 @@
  *
  * Made By MaterializeCSS.com
  */
+ 
+/*Estilo para link do footer*/
+a.linkfooter:link {
+  color:#002640;
+  text-decoration:none;
+}
+a.linkfooter:visited {
+  color:#d3d3d3;
+  text-decoration:none;
+}
+a.linkfooter:hover {
+  color:#ffffff;
+  text-decoration:underline;
+}
+a.linkfooter:active {
+  color:#56ea5e;
+  text-decoration:underline;
+  background-color:#000000;
+}
+/*Estilo para link do footer*/
 
 nav ul a,
 nav .brand-logo {
