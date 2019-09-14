@@ -39,9 +39,9 @@ public class EventoController {
 	}
 	
 	//Requisição para novo index
-		@RequestMapping(value="/novoIndex", method = RequestMethod.GET) //Get pois irá retornar o formulário
+		@RequestMapping(value="/menu", method = RequestMethod.GET) //Get pois irá retornar o formulário
 		public String index(){
-			return "/index2";
+			return "/menu";
 		}
 	
 	//Requisição para salvar os dados do evento no banco de dados

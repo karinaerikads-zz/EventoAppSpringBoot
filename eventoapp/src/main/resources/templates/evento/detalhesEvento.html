@@ -17,21 +17,10 @@
 </head>
 <body>
 
-	<header>
-		<nav>
-		    <div class="nav-wrapper">
-		      <a href="#" class="brand-logo">Evento</a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		      	<li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de eventos</a></li>
-		      </ul>
-		    </div>
-	  	</nav>    
-	</header>
-	
-	<!-- <h3><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de eventos</a></h3> -->
+	<div th:insert="~{menu :: menupag}"></div>
+	<h5 class="center">Detalhes do evento</h5>
+	<div th:each="evento:${evento}" class="container detalhesEvento">
 	 
-	 <div th:each="evento:${evento}" class="container detalhesEvento">
-	 <h5>Detalhes do evento</h5>
 	 	<div class="row">
 	 		<p>Nome: <span th:text="${evento.nome}"></span></p>
 	 		<p>Local: <span th:text="${evento.local}"></span></p>

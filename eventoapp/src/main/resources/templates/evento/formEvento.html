@@ -18,18 +18,10 @@
 </head>
 
 <body>
-	<header>
-		<nav>
-		    <div class="nav-wrapper">
-		      <a href="#" class="brand-logo">Cadastro de eventos</a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		      	<li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></li>
-		      </ul>
-		    </div>
-	  	</nav>    
-	</header>
+	<div th:insert="~{menu :: menupag}"></div>
 	
-	<!--  <h3><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h3>-->
+	<h5 class="center">Cadastrar evento</h5>
+	
 	<th:block th:include='mensagemValidacao'></th:block>
 	<div class="container form">
 		<form class="container" method="post">

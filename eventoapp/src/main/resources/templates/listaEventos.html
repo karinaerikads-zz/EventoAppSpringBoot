@@ -18,20 +18,8 @@
 </head>
 <body>
 
-	<header>
-		<nav>
-		    <div class="nav-wrapper">
-		      <a href="#" class="brand-logo">Lista de Eventos</a>
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
-		      	
-		      </ul>
-		    </div>
-	  	</nav>    
-	</header>
-	
-	<!-- <h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3> -->
-	 
+	 <div th:insert="~{menu :: menupag}"></div>
+ 	 <h5 class="center">Lista de eventos</h5>
 	 <table class="container striped">
 		 <thead>
 		 	<tr>
